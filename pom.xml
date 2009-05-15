@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+	<groupId>jdbm</groupId>
+	<artifactId>project</artifactId>
+	<name>JDBM master project</name>
+	<version>1.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<url>http://github.com/cdegroot/JDBM/tree/master</url>
+	<scm>
+		<url>git://github.com/cdegroot/JDBM.git</url>
+	</scm>
+	<organization>
+		<name>Cees de Groot</name>
+	</organization>
+	<modules>
+		<module>jdbm</module>
+<!--		<module>perftests</module>
+		<module>examples</module> -->
+	</modules>
+</project>

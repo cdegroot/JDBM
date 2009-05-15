@@ -1,10 +1,13 @@
-package jdbm;
+package jdbm.perftests;
 
 
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Properties;
+
+import jdbm.RecordManager;
+import jdbm.RecordManagerFactory;
 
 
 /**

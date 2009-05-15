@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 	<groupId>jdbm</groupId>
 	<artifactId>jdbm</artifactId>
 	<name>JDBM library</name>
@@ -16,5 +17,13 @@
 			<artifactId>junit</artifactId>
 			<version>4.4</version>
 		</dependency>
+		<dependency>
+			<groupId>org.cognitiveweb</groupId>
+			<artifactId>extserv</artifactId>
+			<version>0.1-b2-dev</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/lib/cweb-extser-0.1-b2-dev.jar</systemPath>
+		</dependency>
+
 	</dependencies>
 </project>

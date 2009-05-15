@@ -3,10 +3,11 @@
  * (c) 2005 Trumpet, Inc.
  *
  */
-package jdbm;
+package jdbm.perftests;
 
 import java.io.IOException;
 
+import jdbm.RecordManager;
 import jdbm.helper.Serializer;
 
 /**

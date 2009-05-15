@@ -15,6 +15,7 @@
 	</organization>
 	<modules>
 		<module>jdbm</module>
+		<module>examples</module>
 <!--		<module>perftests</module>
 		<module>examples</module> -->
 	</modules>

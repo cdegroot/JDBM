@@ -1,3 +1,4 @@
+package jdbm.examples;
 
 import java.util.Properties;
 import jdbm.RecordManager;

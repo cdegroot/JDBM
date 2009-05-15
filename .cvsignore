@@ -1,0 +1,8 @@
+build
+dist
+.classpath
+.project
+*.db
+*.lg
+heapdump*
+javacore*

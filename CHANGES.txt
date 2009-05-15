@@ -1,0 +1,103 @@
+$Id: CHANGES.txt,v 1.11 2002/10/13 18:54:42 boisvert Exp $
+
+CHANGE LOG
+==========
+
+For version "CVS":
+
+    * Better abstraction for RecordManager, which is now an interface.
+      A concrete RecordManager instance is now obtained from
+      RecordManagerFactory (and RecordManagerFactory supports 'pluggable'
+      RecordManager providers)
+
+    * Faster log checkpointing by avoiding unnecessary writes to same block
+      in TransactionManager (contributed by Nathan Clement)
+
+    * Added ability to set split point in BTree to optimize insert performance
+      of entries with monotonically increasing/decreasing keys.  Also added
+      statistics on BTree to monitor performance.
+      (contributed by Kent Fitch - kentfitch@hotmail.com)
+
+    * Renamed methods called 'assert' which is a reserved word in JDK 1.4+.
+      (suggested by Yonas Jongkind)
+
+    * Performance improvement in BlockIo.readLong() contributed by
+      Erwin Bolwidt <ejb@klomp.org>
+
+    * Switched to using java.util.Comparator interface instead of
+      JDBM-specific comparator.
+     
+
+For version 0.13:
+
+    * Upgraded to Ant 1.4.1 (and switched to Crimson instead of Xerces
+      XML Parser).  Updated the build file accordingly and fixed a number
+      of build issues.
+
+    * Upgraded to JUnit 3.7.  Corrected use of deprecated methods in test
+      harness.
+
+    * Added IntegerComparator and updated TestBTree unit test
+      (both contributed by Christof Dallermassl)
+
+    * Fixed TestBTree.testBasics() and TestBTree.multiThreadAccess()
+      test cases.
+
+    * RecordManager now throws IOException if used after being closed()
+
+    * Updated BTree.browse() javadoc to warn against structural modifications
+      to the BTree while browsing.
+
+
+For version 0.12:
+    * Fixed a corruption bug in B+Tree during insertion.
+    * Added {JDBMHashtable, BTree, HTree}.getRecid() methods
+    * Loading of an existing HTree now uses static HTree.load() method
+      instead of constructor
+    * Added synchronization to RecordManager methods for thread-safeness.
+
+
+For version 0.11:
+    * Added new B+Tree data structure implementation.
+
+For version 0.10:
+    * Bug fix release with performance enhancements.
+    * Fixed an infinite loop bug in Enumeration returned by HashDirectory
+      (reported by Daniel Herlemont).  Added HashtableTest regression test.
+    * Fixed LogicalRowIdManager.fetch() which dirtied blocks unnecessarily.
+    * RecordFile.commit() optimized to avoid disk writes & sync() if no
+      blocks have been dirtied in the transaction.
+
+For version 0.09:
+    * This is a major upgrade in terms of functionality.  We now have
+      a GDBM-like API (actually, very much like Hashtable) and added
+      explicit commit/rollback functionality.
+    * Repackaging com.cdegroot.recman.* to jdbm.recman.*
+    * Added jdbm.* package -- GDBM-like access
+    * Added jdbm.hash.* package -- HTree implementation and corresponding
+      test cases.
+    * Changes in jdbm.recman.RecordManager to support commit() and rollback().
+      This change affected many classes in jdbm.recman.*, notably
+      TransactionManager.   Added new test case for rollback().
+    * Test framework now integrated in the build.
+    * Updated most of the code to reflect the new BSD license.
+
+For version 0.081:
+    * Important bug fix.  TransactionManager had a bug which could potentially
+      corrupt the database file when the database was not closed explicitly.
+      See bug #103848 on SourceForge.
+      http://sourceforge.net/bugs/?func=detailbug&bug_id=103848&group_id=4155
+      Bug report & fix courtesy of Alex Boisvert [boisvert@exoffice.com].
+
+For version 0.08:
+    * Cleanups. Cleaning up recman/FileHeader seems to have affected
+      performance, but not bad enough for now (we can always optimize
+      it again).
+    * Added support for "root" rowids, which are special rowids that
+      are accessed by an index and stored in the file header. Can be
+      used for bootstrapping access to other structures.
+
+For version 0.07:
+    * Updated license to GNU Library General Public License.
+    * More verbosity in doc comments on recman/RecordManager.
+

@@ -1,0 +1,26 @@
+$Id: TODO.txt,v 1.4 2004/12/07 19:09:48 boisvert Exp $
+
+-Use of Comparator, Set, Map, Collection and Iterator
+ (suggested by Juozas Baliuka, Rushi Desai and others)
+ 
+-Make the number of transaction per checkpoint configurable
+ (in TransactionManager)
+ 
+-Record file compaction
+
+-BTree key/value compression
+
+-Change BTree.size() from "int" to "long"
+
+-Add jdbm.helper.SoftCache in jdbm.recman.Provider stub section
+
+-Incorporate HashtableTest bug demonstration test into jdbm.AllTests
+
+-Extract common superclass jdbm.helper.AbstractCachePolicy for MRU, SoftCache
+
+-Document in CHANGES.txt:
+	new test.bat
+	new jdbm.AllTests
+	new jdbm.helper.SoftCache
+	changed CachePolicy, MRU
+        updated APIs
